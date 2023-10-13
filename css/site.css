@@ -1,0 +1,582 @@
+/* Подключаем шрифт */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800&family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+
+/* Общие: убираем отступы и обводку */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+/* общие для body */
+body {
+  background: #fafafa;
+  font-size: 16px;
+  font-weight: 400;
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "M PLUS 1p", sans-serif;
+  text-align: center;
+  /* min-width: 910px; */
+}
+
+/* общие для ссылок 
+без нижнего подчеркивания*/
+a {
+  text-decoration: none;
+  transition: color 600 ms ease; /* задержка при переходах */
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ********* Шапка ***************  */
+header {
+  width: 90%;
+  padding: 15px 5%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+/* Внутренние элементы */
+header > .logo {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 27px;
+  font-weight: 500;
+  color: #6e6abe;
+}
+
+/* Центрируем навигацию */
+header > .nav {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header > .nav a {
+  font-family: "M PLUS 1p", sans-serif;
+  margin: 20px 15px;
+  padding-bottom: 15px;
+  /* display: inline-block; */
+  color: black;
+  font-weight: 400;
+  /* align-self: none; */
+  line-height: 50px;
+  word-wrap: nowrap;
+}
+
+header > .nav a:hover {
+  color: #6e6abe;
+  border-bottom: 2px solid #6e6abe;
+}
+
+header > .menu {
+  cursor: pointer;
+  color: #9877b8;
+  font-size: 23px;
+}
+
+/* ***** Блок работы с шапкой:
+  при скроле 50% вниз она фиксируется и появляется в обратном порядке */
+
+.fixed {
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 2px solid silver;
+  z-index: 5;
+}
+
+/* Если нужно при скроле изменить цвет ссылок */
+.fixed .nav a {
+  color: chocolate;
+}
+
+/* ------ Блок выезжающего меню ------------ */
+#hidden-menu {
+  width: 250px;
+  position: fixed; /* фиксируем положение меню при любом скроле */
+  top: 50xp;
+  right: -250px;
+  height: 50vh;
+  background: rgba(240, 229, 214, 0.5); /* antiquewhite ee9777*/
+  z-index: 10;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+/* Стили для кнопки "close" */
+#hidden-menu .close {
+  font-size: 30px;
+  float: right;
+  margin-right: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 600ms ease;
+}
+
+#hidden-menu .close:hover {
+  color: brown;
+}
+
+#hidden-menu h2 {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+#hidden-menu ul {
+  list-style: none;
+}
+
+#hidden-menu ul li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#hidden-menu ul li a {
+  color: #5a09a5;
+}
+
+#hidden-menu ul li a:hover {
+  color: #9948e6;
+  border-bottom: 2px solid #9948e6;
+}
+
+/* ***** Основная часть ************** */
+.full-page,
+.bg-fixed {
+  height: 95vh; /* 95vh - 95% высоты видимой части экрана */
+  background: url("../img/health.jpg") no-repeat center center;
+  background-attachment: fixed; /* фиксированное положение картинки */
+  background-size: cover; /* растягиваем на весь экран*/
+  background-blend-mode: multiply; /* будет несколько слоев */
+  background-color: #3b3b3b; /* добавляем цвет и смешиваем */
+  color: #fff;
+  text-align: center;
+}
+
+.full-page h1 {
+  padding-top: 30vh;
+  font-size: 48px;
+  width: 580px; /* располагаем текст в несколько строк */
+  margin: 0 auto;
+}
+
+.full-page h3 {
+  margin: 20px auto;
+  font-size: 15px;
+  /* text-transform: uppercase; */
+  font-weight: 500;
+  width: 400px;
+  color: #ccc;
+}
+
+.full-page button,
+.bg-fixed button {
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+  background: #ffc107;
+  color: #704404;
+  font-weight: 500;
+  transition: background 600ms ease;
+}
+
+.full-page button span,
+.bg-fixed button span {
+  margin-right: 10px;
+  position: relative;
+  top: -6px;
+}
+
+.full-page button:hover,
+.bg-fixed button:hover {
+  background: #ff9800;
+}
+
+/* При наведении стрелка двигается вправо */
+.full-page button:hover img,
+.bg-fixed button:hover img {
+  /* margin-left: 15px; */
+  /* position: relative;
+  right: -6px; */
+  transform: translateX(8px);
+}
+
+.full-page button img,
+.bg-fixed button img {
+  transition: transform 550ms ease;
+}
+
+body h2 {
+  font-size: 35px;
+  font-weight: 800;
+  width: 80%;
+  margin: 30px auto 0px;
+}
+
+/* ***** Секция № 2 ************** */
+.features {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-left: 5%;
+  text-align: center;
+}
+
+.features > div {
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  margin: 50px 10px;
+  border-radius: 7px;
+}
+
+.features > div img,
+.features .item-logo {
+  padding: 10px;
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.features > div h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  /* color: #454545; */
+}
+
+.features > div p {
+  font-weight: 300;
+  /* color: #0a1111; */
+}
+
+/* ** --------- Карусель------------------ ** */
+.gallery {
+  width: 80%;
+  margin: 50px 10%;
+  position: relative;
+  left: 50px;
+}
+
+.gallery div {
+  margin-top: 10px;
+  margin-right: 30px;
+}
+
+.gallery .arrow-prev,
+.gallery .arrow-next {
+  font-size: 28px;
+  position: absolute;
+  transition: all 600ms ease;
+  top: 40%;
+  cursor: pointer;
+}
+
+.gallery .arrow-prev:hover,
+.gallery .arrow-next:hover {
+  transform: scale(1.4);
+}
+
+.gallery .arrow-prev {
+  left: -50px;
+}
+.gallery .arrow-next {
+  right: -30px;
+}
+
+/* *********** Форма подписки *************** */
+.bg-fixed {
+  height: 350px;
+  background-image: url("../img/medicine.jpg");
+}
+
+.bg-fixed h3 {
+  font-size: 25px;
+  padding-top: 130px;
+  margin-bottom: 20px;
+}
+
+.bg-fixed input {
+  padding: 16px 20px;
+  width: 300px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 5px;
+  background: #fafafa;
+}
+
+.bg-fixed button {
+  padding: 7px 20px;
+  margin-top: 10px;
+  position: relative;
+  top: 7px;
+}
+
+/* *********** Balls *************** */
+.container-ball {
+  width: 90%;
+  margin: 200px auto;
+}
+
+.frame-ball {
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  border: 2px solid #b1a6a6;
+  position: relative;
+}
+
+.ball {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #3b3b3b;
+  font-weight: 500;
+  line-height: 150px;
+}
+
+.sleep {
+  position: absolute;
+  top: 42px;
+  left: -204px;
+  background-color: blanchedalmond;
+}
+
+.nutrition {
+  position: absolute;
+  top: -62%;
+  left: -30%;
+  background-color: #8ae4e7;
+}
+
+.lifestyle {
+  position: absolute;
+  top: -61%;
+  right: -30%;
+  background-color: #f8cfea;
+}
+
+.movement {
+  position: absolute;
+  top: 42px;
+  right: -204px;
+  background-color: #c9d9f8;
+}
+
+.motivation {
+  position: absolute;
+  bottom: -61%;
+  right: -30%;
+  background-color: #f0e0d6;
+}
+
+.mindstate {
+  position: absolute;
+  bottom: -61%;
+  left: -30%;
+  background-color: #ffc107;
+}
+
+/* ************** Дополнтительные рамки ****************** */
+.frame {
+  position: absolute;
+  border: 1px solid #b1a6a6;
+  width: 300px;
+  height: 125px;
+}
+
+/* matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) */
+.frame1 {
+  transform: matrix(1, -0.41, 0.41, 1, -28, 60);
+}
+
+.frame2 {
+  transform: matrix(1, 0.41, -0.41, 1, -28, 60);
+  width: 302px;
+}
+
+.frame3 {
+  position: absolute;
+  top: 122px;
+  left: -55px;
+  height: 0.8px;
+  width: 350px;
+  /* background-color: gray; */
+  border-top: 1px solid #b1a6a6;
+}
+
+.frame4 {
+  position: absolute;
+  top: 122px;
+  left: -54px;
+  transform: rotate(45deg);
+  height: 0.8px;
+  width: 352px;
+  /* background-color: gray; */
+  border-top: 1px solid #b1a6a6;
+}
+
+.frame5 {
+  position: absolute;
+  top: 124px;
+  left: -54px;
+  transform: rotate(-45deg);
+  height: 0.8px;
+  width: 352px;
+  /* background-color: gray; */
+  border-top: 1px solid #b1a6a6;
+}
+
+/* *****************  Шарики ****************  */
+.bally {
+  /* opacity: 0; */
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  border: 1px solid #b1a6a6;
+  z-index: 4;
+}
+
+.bally1 {
+  opacity: 0;
+  top: -14px;
+  left: -14px;
+  background-color: #8ae4e7;
+  animation: moving1 10s ease-in infinite;
+}
+
+.bally2 {
+  top: -14px;
+  left: -14px;
+  background-color: #8ae4e7;
+  animation: moving2 8s ease-in-out -1s infinite;
+}
+
+.bally3 {
+  background-color: blanchedalmond;
+  animation: moving3 9s ease-in-out 1s infinite;
+}
+
+.bally4 {
+  top: -14px;
+  left: -14px;
+  background-color: #f0e0d6;
+  animation: moving4 7s ease-in-out 2s infinite;
+}
+
+/* объявляем анимацию*/
+@keyframes moving1 {
+  0% {
+    opacity: 0;
+    /* left: -14px;
+    top: -14px; */
+  }
+  25% {
+    opacity: 1;
+  }
+  /* 50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  } */
+  85% {
+    left: -14px;
+    top: 245px;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moving2 {
+  from {
+    top: -14px;
+    left: -14px;
+  }
+  to {
+    top: 103px;
+    left: 274px;
+  }
+}
+
+@keyframes moving3 {
+  from {
+    top: 100px;
+    left: -51px;
+  }
+  to {
+    top: -13px;
+    left: 238px;
+  }
+}
+
+@keyframes moving4 {
+  from {
+    top: 240px;
+    left: 235px;
+  }
+  to {
+    top: -14px;
+    left: -14px;
+  }
+}
+
+/* The parameters are as follow:
+matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) */
+@keyframes mymoving {
+  50% {
+    transform: matrix(1.4, 0.75, -0.75, 1.4, 10, 10);
+  }
+}
+
+/* *********** Футер *************** */
+footer {
+  width: 90%;
+  padding: 50px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .up-btn {
+  /* width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px; 
+  border-radius: 50%;
+  background: #eee;
+  border: 1px solid gray;
+  color: #3b3b3b;*/
+  cursor: pointer;
+  transition: transform 600ms ease;
+}
+
+/* Плавно поднимаем кнопку при наведении */
+footer .up-btn:hover,
+footer .social div:hover {
+  transform: translateY(-13px);
+}
+
+footer .social div {
+  display: inline-block;
+  margin-left: 15px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  background: #eee;
+  border: 1px solid gray;
+  color: #3b3b3b;
+  cursor: pointer;
+  transition: transform 600ms ease;
+}
