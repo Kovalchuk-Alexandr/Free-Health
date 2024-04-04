@@ -9,4 +9,4 @@
 - Анимация,
 - Появлениие шапки после прокрутки половины экрана
 
-[Смотреть демо](https://kovalchuk-alexandr.github.io/freelanceportfolio/)
+[Смотреть демо](https://kovalchuk-alexandr.github.io/Free-Health/)
